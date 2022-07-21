@@ -1,9 +1,11 @@
+import {shipPlacement} from './ship-placement';
 
 // make grid data on console
-let gameGridCons = [];
-
+export let gameGridCons = [];
  // hit count
  let hitCount = 0;
+ let numberOfShip = 17;
+
 export const makeGridData = function (size){
   for (let i=0; i< size; i++){
         gameGridCons[i]=[' . '];   
@@ -11,16 +13,11 @@ export const makeGridData = function (size){
             gameGridCons[i][j]= ' . ';
         }
     }
-    //add ship
-    gameGridCons[0][0] = ' s ';
-    gameGridCons[2][4] = ' s ';
-    gameGridCons[0][1] = ' s ';
-    gameGridCons[3][2] = ' s ';
-    gameGridCons[2][0] = ' s ';// total 5 ship
-    
+    shipPlacement(numberOfShip,size); //add ship
     console.log(gameGridCons);
     gameBoardFunc();
   }
+
 
 //game function on grid
 export const gameBoardFunc = function(){
@@ -42,13 +39,13 @@ const fireAttack = function(e){
          else if (gameGridCons[row][col] === ' o '){
             alert('you already hit the same spot!')
         }
-         else if(gameGridCons[row][col] = ' s'){
+         else if(gameGridCons[row][col] = ' s '){
             e.target.style.backgroundColor = 'red';
             gameGridCons[row][col] = ' x ';
            hitCount++;
            // hit count using 5 ship
-           if(hitCount === 5){
-               alert('all five ship is sink');
+           if(hitCount === numberOfShip){
+               alert('Congrats all ship is sunk!');
            }
         }
         console.log( gameGridCons);
