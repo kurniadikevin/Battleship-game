@@ -1,4 +1,4 @@
-import {shipPlacement} from './ship-placement';
+import {shipPlacement} from './ship-placement-com';
 
 // make grid data on console
 export let gameGridCons = [];
@@ -6,6 +6,7 @@ export let gameGridCons = [];
  let hitCount = 0;
  let numberOfShip = 17;
 
+// computer board 
 export const makeGridData = function (size){
   for (let i=0; i< size; i++){
         gameGridCons[i]=[' . '];   
@@ -15,14 +16,14 @@ export const makeGridData = function (size){
     }
     shipPlacement(); //add ship
     console.log(gameGridCons);
-    gameBoardFunc();
+    CgameBoardFunc();
   }
 
 
 //game function on grid
-export const gameBoardFunc = function(){
-    const gridContainer= document.querySelector('.grid-container');
-    gridContainer.addEventListener('click',fireAttack,false);
+export const CgameBoardFunc = function(){
+    const gridContainerC= document.querySelector('.grid-containerC');
+    gridContainerC.addEventListener('click',fireAttack,false);
 }
 
 // fire click function

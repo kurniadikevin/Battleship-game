@@ -1,4 +1,19 @@
 body {
     color: white;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+  }
+
+.header{
+ font-size: 30pt;
+ margin-bottom: 5%;
+}
+
+.main{
+  display: flex;
+  gap: 200px;
   }
