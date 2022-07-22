@@ -13,7 +13,7 @@ export const makeGridData = function (size){
             gameGridCons[i][j]= ' . ';
         }
     }
-    shipPlacement(numberOfShip,size); //add ship
+    shipPlacement(); //add ship
     console.log(gameGridCons);
     gameBoardFunc();
   }
@@ -45,7 +45,9 @@ const fireAttack = function(e){
            hitCount++;
            // hit count using 5 ship
            if(hitCount === numberOfShip){
-               alert('Congrats all ship is sunk!');
+            e.target.style.backgroundColor = 'red';
+            gameGridCons[row][col] = ' x ';
+            alert('Congrats all ship is sunk!');
            }
         }
         console.log( gameGridCons);
