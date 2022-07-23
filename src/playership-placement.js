@@ -1,5 +1,5 @@
 export let playerGridCons = [];
-let playerShip = 0;
+export let playerShip = 0;
     
 export const makeGridDataPlayer = function (size){
     for (let i=0; i< size; i++){

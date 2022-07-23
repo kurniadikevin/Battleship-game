@@ -37,8 +37,9 @@ const fireAttack = function(e){
             e.target.style.backgroundColor = 'white';
             gameGridCons[row][col] = ' o ';
         }
-         else if (gameGridCons[row][col] === ' o '){
+         else if (gameGridCons[row][col] === ' o ' || gameGridCons[row][col] === ' x ' ){
             alert('you already hit the same spot!')
+            fireAttack();
         }
          else if(gameGridCons[row][col] = ' s '){
             e.target.style.backgroundColor = 'red';
@@ -48,12 +49,12 @@ const fireAttack = function(e){
            if(hitCount === numberOfShip){
             e.target.style.backgroundColor = 'red';
             gameGridCons[row][col] = ' x ';
-            alert('Congrats all ship is sunk!');
+            alert('Congrats you win all enemy ship is sunk!');
            }
         }
         console.log( gameGridCons);
         console.log('hit count: '+ hitCount);
     } 
     e.stopPropagation();   
-    randomAttacked();
+  setTimeout( randomAttacked,1000);
 }

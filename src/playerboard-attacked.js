@@ -1,4 +1,5 @@
-import {playerGridCons} from './playership-placement';
+import {playerGridCons,playerShip} from './playership-placement';
+
 
 export const randomAttacked = function(){
     let hitCountP = 0;
@@ -15,7 +16,7 @@ export const randomAttacked = function(){
         // target style background change for ui
         let playerGrid = document.getElementById(`p${randomRow}${randomCol}`);
         playerGrid.style.backgroundColor='red';
-        if(hitCountP === shipCountP){
+        if(hitCountP === playerShip){
             alert(' all your ship is sunk , you Lose!');
         }
     }
@@ -26,9 +27,10 @@ export const randomAttacked = function(){
         playerGrid.style.backgroundColor='white';
     }
     else if( playerGridCons[randomRow][randomCol] === ' x ' ){
-        let newRandomRow = Math.floor(Math.random()* (gridSize));
-        let newRandomCol = Math.floor(Math.random()* (gridSize));
+        randomAttacked();
+        //let newRandomRow = Math.floor(Math.random()* (gridSize));
+        //let newRandomCol = Math.floor(Math.random()* (gridSize));
         //playerGridCons[newRandomRow][newRandomCol]
-        alert('enemy shot the same spot');// this case need to be not happen
+        //alert('enemy shot the same spot');// this case need to be not happen
     }
 }
