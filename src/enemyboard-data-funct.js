@@ -1,5 +1,7 @@
 import {shipPlacement} from './enemyship-placement';
 import { randomAttacked } from './playerboard-attacked';
+import { enemyShipCount } from './game-declaration';
+
 // make grid data on console
 export let gameGridCons = [];
  // hit count
@@ -45,6 +47,10 @@ const fireAttack = function(e){
             e.target.style.backgroundColor = 'red';
             gameGridCons[row][col] = ' x ';
            hitCount++;
+           //declaration ship count
+           enemyShipCount--;
+           const enemyDec = document.querySelector('.enemy-dec');
+            enemyDec.textContent = 'Enemy Ship left:' + enemyShipCount;
            // hit count using 5 ship
            if(hitCount === numberOfShip){
             e.target.style.backgroundColor = 'red';

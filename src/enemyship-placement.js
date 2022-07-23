@@ -1,4 +1,6 @@
 import { gameGridCons } from "./enemyboard-data-funct";
+import { enemyShipDec } from "./game-declaration";
+
 export const shipPlacement = function(){
     const shipPlaceLoop = function(totalShip,gridSize,shipLength){
         for ( let i=0; i< totalShip; i++){
@@ -28,4 +30,5 @@ export const shipPlacement = function(){
     shipPlaceLoop(1,10,4);
     shipPlaceLoop(2,10,3);
     shipPlaceLoop(1,10,2);
+    enemyShipDec();
 }

@@ -3,7 +3,7 @@ import {playerGridCons,playerShip} from './playership-placement';
 
 export const randomAttacked = function(){
     let hitCountP = 0;
-    let shipCountP = 17;
+    let shipCountP = 17;// clone of player ship but constant variable
     let gridSize = 10;
 
     let randomRow =  Math.floor(Math.random()* (gridSize));
@@ -12,11 +12,14 @@ export const randomAttacked = function(){
     // ship got shot
     if(playerGridCons[randomRow][randomCol] === ' s ' ){
         hitCountP++;
+        playerShip--;
+        const playerDec = document.querySelector('.player-dec');
+        playerDec.textContent = 'Player Ship left: '+ (playerShip); // declaration for ship count
         playerGridCons[randomRow][randomCol] = ' x ';
         // target style background change for ui
         let playerGrid = document.getElementById(`p${randomRow}${randomCol}`);
         playerGrid.style.backgroundColor='red';
-        if(hitCountP === playerShip){
+        if(hitCountP === shipCountP || playerShip === 0){
             alert(' all your ship is sunk , you Lose!');
         }
     }

@@ -1,3 +1,5 @@
+import {  playerShipDec } from "./game-declaration";
+
 export let playerGridCons = [];
 export let playerShip = 0;
     
@@ -8,10 +10,10 @@ export const makeGridDataPlayer = function (size){
               playerGridCons[i][j]= ' . ';
           }
       }
-
       // make placement on your ship
      pGameBoardFunc() 
      console.log(playerGridCons);
+    
     }
   
     const pGameBoardFunc = function(){
@@ -39,9 +41,10 @@ export const makeGridDataPlayer = function (size){
             } 
             
         }
-            
-            console.log( playerGridCons);
-            console.log('ship count: '+ playerShip);
+         console.log( playerGridCons);
+         console.log('ship count: '+ playerShip);
+         e.stopPropagation();     
+         playerShipDec();//
+
          
-         e.stopPropagation();   
     }
