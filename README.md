@@ -9,5 +9,7 @@ No.	Class of ship	Size
 
 to do
 - randomize ship position
-- make ship length more than 1
-- make ship position by demand
+- make ship length more than 1(done)
+your board
+- make ship position by demand(done)
+- make gameplay and computer ai attack

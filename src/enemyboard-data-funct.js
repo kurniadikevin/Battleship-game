@@ -1,5 +1,5 @@
-import {shipPlacement} from './ship-placement-com';
-
+import {shipPlacement} from './enemyship-placement';
+import { randomAttacked } from './playerboard-attacked';
 // make grid data on console
 export let gameGridCons = [];
  // hit count
@@ -55,4 +55,5 @@ const fireAttack = function(e){
         console.log('hit count: '+ hitCount);
     } 
     e.stopPropagation();   
+    randomAttacked();
 }

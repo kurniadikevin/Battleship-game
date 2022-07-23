@@ -1,5 +1,4 @@
-
-let playerGridCons = [];
+export let playerGridCons = [];
 let playerShip = 0;
     
 export const makeGridDataPlayer = function (size){
@@ -20,7 +19,7 @@ export const makeGridDataPlayer = function (size){
         gridContainerP.addEventListener('click',placeYourShip,false);
     }
     
-    // fire click function
+    // click to place ship
     const placeYourShip = function(e){
         if(e.target !== e.currentTarget){
             let row = e.target.id.substring(1,2);
