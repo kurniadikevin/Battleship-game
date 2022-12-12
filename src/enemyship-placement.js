@@ -31,4 +31,7 @@ export const shipPlacement = function(){
     shipPlaceLoop(2,10,3);
     shipPlaceLoop(1,10,2);
     enemyShipDec();
+
+    //make sure total ship always 17
+
 }
