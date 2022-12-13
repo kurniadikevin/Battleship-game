@@ -12,7 +12,8 @@ export const makeEnemyGrid = function(size){
         for( let j =0 ; j < size; j++){
             const gridC = document.createElement('div');
             gridC.id  = 'g' + i + j;
-            gridC.style.border = '2px solid white';
+            gridC.style.border = '2px solid var(--primary)';
+            gridC.style.backgroundColor='var(--black2)';
             gridContainer.appendChild(gridC);
         }
     }
@@ -34,7 +35,8 @@ export const makePlayerGrid = function(size){
         for( let j =0 ; j < size; j++){
             const gridP = document.createElement('div');
             gridP.id  = 'p' + i + j;
-            gridP.style.border = '2px solid gray';
+            gridP.style.border = '2px solid var(--primary)';
+            gridP.style.backgroundColor='var(--black2)';
             gridContainer.appendChild(gridP);
         }
     }

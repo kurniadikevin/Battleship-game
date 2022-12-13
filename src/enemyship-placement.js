@@ -33,5 +33,5 @@ export const shipPlacement = function(){
     enemyShipDec();
 
     //make sure total ship always 17
-
+    // make player ship template in order
 }

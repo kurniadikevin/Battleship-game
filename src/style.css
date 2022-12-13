@@ -1,20 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
+
+:root{
+ --primary : #F4ECD4;
+ --black1 : rgb(56,53,44);
+ --black2 :rgb(107,104,93);
+ --orange: rgb(217,116,52);
+}
+
 body {
-    color: white;
-    background-color: black;
+    color: var(--black1);
+    background-color: var(--primary);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin:0;
     padding: 30px;
+    font-family: 'Inconsolata', monospace;
   }
 
 .header{
- font-size: 30pt;
+ font-size: 28pt;
  margin-bottom: 5%;
 }
 
+.title{
+  font-weight: 300;
+  font-family: 'Martian Mono', monospace;
+  animation-name: float;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float{
+  0%{
+    
+  }
+  50%{
+    transform: translateY(5px);
+  }
+  100%{
+   
+  }
+}
 .main{
   display: flex;
   gap: 200px;
   }
+
+.grid-containerP{
+font-weight: 700;
+}
+
+.grid-containerC{
+font-weight: 700;
+}
+
+.player-title, .enemy-title{
+  padding-top: 20px;
+}
+
+.enemy-dec {
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14pt;
+}
+.player-dec{
+  font-size: 14pt;
+  font-weight: 700;
+}
+
+
+
+#alert-box{
+  background-color: var(--black2);
+  padding: 20px 30px;
+  color:var(--orange);
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 16pt;
+  opacity: 0.9;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fade-in{
+  from{
+    left: -150px;
+  }
+  to{
+    left: 30px;
+  }
+}

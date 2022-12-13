@@ -18,16 +18,18 @@ export const randomAttacked = function(){
         playerGridCons[randomRow][randomCol] = ' x ';
         // target style background change for ui
         let playerGrid = document.getElementById(`p${randomRow}${randomCol}`);
-        playerGrid.style.backgroundColor='red';
+        playerGrid.style.backgroundColor='var(--orange)';
         if(hitCountP === shipCountP || playerShip === 0){
-            alert(' all your ship is sunk , you Lose!');
+           // alert(' all your ship is sunk , you Lose!');
+            const alertBox = document.querySelector('#alert-box');
+            alertBox.textContent=' all your ship is sunk , you Lose!';
         }
     }
     else if(playerGridCons[randomRow][randomCol]=== ' . '){
         playerGridCons[randomRow][randomCol] = ' x ';
         // target style background change for ui
         let playerGrid = document.getElementById(`p${randomRow}${randomCol}`);
-        playerGrid.style.backgroundColor='white';
+        playerGrid.style.backgroundColor='var(--black1)';
     }
     else if( playerGridCons[randomRow][randomCol] === ' x ' ){
         randomAttacked();

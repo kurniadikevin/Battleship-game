@@ -28,6 +28,7 @@ export const CgameBoardFunc = function(){
     gridContainerC.addEventListener('click',fireAttack,false);
 }
 
+
 // fire click function
 const fireAttack = function(e){
     if(e.target !== e.currentTarget){
@@ -38,15 +39,21 @@ const fireAttack = function(e){
         if(gameGridCons[row][col] === ' . '){
             e.target.style.backgroundColor = 'white';
             gameGridCons[row][col] = ' o ';
+            const alertBox = document.querySelector('#alert-box');
+            alertBox.textContent='Game on!';
         }
          else if (gameGridCons[row][col] === ' o ' || gameGridCons[row][col] === ' x ' ){
-            alert('you already hit the same spot!')
+           // alert('You already hit the same spot!');
+            const alertBox = document.querySelector('#alert-box');
+            alertBox.textContent='You already hit the same spot!';
             fireAttack();
         }
          else if(gameGridCons[row][col] = ' s '){
-            e.target.style.backgroundColor = 'red';
+            e.target.style.backgroundColor = 'var(--orange)';
             gameGridCons[row][col] = ' x ';
            hitCount++;
+           const alertBox = document.querySelector('#alert-box');
+           alertBox.textContent='You hit enemy ship!';
            //declaration ship count
            enemyShipCount--;
            const enemyDec = document.querySelector('.enemy-dec');
@@ -55,7 +62,9 @@ const fireAttack = function(e){
            if(hitCount === numberOfShip){
             e.target.style.backgroundColor = 'red';
             gameGridCons[row][col] = ' x ';
-            alert('Congrats you win all enemy ship is sunk!');
+            //alert('Congrats you win all enemy ship is sunk!');
+            const alertBox = document.querySelector('#alert-box');
+           alertBox.textContent='You win! All enemy ship sink';
            }
         }
         console.log( gameGridCons);
